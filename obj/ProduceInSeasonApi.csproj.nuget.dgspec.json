@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/cat-tuongtu/Documents/Projects/ProduceInSeasonApi/ProduceInSeasonApi.csproj": {}
+    "D:\\Projects\\ProduceInSeasonApi\\ProduceInSeasonApi.csproj": {}
   },
   "projects": {
-    "/Users/cat-tuongtu/Documents/Projects/ProduceInSeasonApi/ProduceInSeasonApi.csproj": {
+    "D:\\Projects\\ProduceInSeasonApi\\ProduceInSeasonApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/cat-tuongtu/Documents/Projects/ProduceInSeasonApi/ProduceInSeasonApi.csproj",
+        "projectUniqueName": "D:\\Projects\\ProduceInSeasonApi\\ProduceInSeasonApi.csproj",
         "projectName": "ProduceInSeasonApi",
-        "projectPath": "/Users/cat-tuongtu/Documents/Projects/ProduceInSeasonApi/ProduceInSeasonApi.csproj",
-        "packagesPath": "/Users/cat-tuongtu/.nuget/packages/",
-        "outputPath": "/Users/cat-tuongtu/Documents/Projects/ProduceInSeasonApi/obj/",
+        "projectPath": "D:\\Projects\\ProduceInSeasonApi\\ProduceInSeasonApi.csproj",
+        "packagesPath": "C:\\Users\\Cat\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\ProduceInSeasonApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/cat-tuongtu/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Cat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,13 +55,13 @@
               "target": "Package",
               "version": "[6.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[6.0.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -80,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

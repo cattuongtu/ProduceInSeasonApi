@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="../build/ProduceInSeasonApi.props" />
+  <Import Project="..\build\ProduceInSeasonApi.props" />
 </Project>

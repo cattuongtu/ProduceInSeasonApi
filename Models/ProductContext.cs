@@ -10,6 +10,6 @@ namespace ProduceInSeasonApi.Models
         {
         }
 
-        public DbSet<Product> Produce { get; set; } = null!;
+        public DbSet<Product> Products { get; set; } = null!;
     }
 }

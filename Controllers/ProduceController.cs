@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProduceInSeasonApi.Models;
@@ -24,7 +20,7 @@ namespace ProduceInSeasonApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductDTO>>> GetProduce()
         {
-            return await _context.Produce
+            return await _context.Products
                 .Select(x => ItemToDTO(x))
                 .ToListAsync();
         }
@@ -33,7 +29,7 @@ namespace ProduceInSeasonApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductDTO>> GetProduct(long id)
         {
-            var product = await _context.Produce.FindAsync(id);
+            var product = await _context.Products.FindAsync(id);
 
             if (product == null)
             {
@@ -53,7 +49,7 @@ namespace ProduceInSeasonApi.Controllers
                 return BadRequest();
             }
 
-            var product = await _context.Produce.FindAsync(id);
+            var product = await _context.Products.FindAsync(id);
             if (product == null)
             {
                 return NotFound();
@@ -90,13 +86,14 @@ namespace ProduceInSeasonApi.Controllers
         {
             var product = new Product
             {
+                Id = productDTO.Id,
                 IsFruit = productDTO.IsFruit,
                 Name = productDTO.Name,
                 Description = productDTO.Description,
                 Season = productDTO.Season
             };
 
-            _context.Produce.Add(product);
+            _context.Products.Add(product);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, ItemToDTO(product));
@@ -106,13 +103,13 @@ namespace ProduceInSeasonApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(long id)
         {
-            var product = await _context.Produce.FindAsync(id);
+            var product = await _context.Products.FindAsync(id);
             if (product == null)
             {
                 return NotFound();
             }
 
-            _context.Produce.Remove(product);
+            _context.Products.Remove(product);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -120,7 +117,7 @@ namespace ProduceInSeasonApi.Controllers
 
         private bool ProductExists(long id)
         {
-            return _context.Produce.Any(e => e.Id == id);
+            return _context.Products.Any(e => e.Id == id);
         }
 
         private static ProductDTO ItemToDTO(Product product) => new ProductDTO
