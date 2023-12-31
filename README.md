@@ -8,4 +8,5 @@ C# 10
 
 ## Installation
 > dotnet run
+
 To run this project on the command line, run this command above.
