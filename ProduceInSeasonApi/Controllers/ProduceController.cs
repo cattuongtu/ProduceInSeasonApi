@@ -119,7 +119,7 @@ namespace ProduceInSeasonApi.Controllers
             return _context.Products.Any(e => e.Id == id);
         }
 
-        public ProductDTO ItemToDTO(Product product) => new ProductDTO
+        static private ProductDTO ItemToDTO(Product product) => new ProductDTO
         {
             Id = product.Id,
             Name = product.Name,

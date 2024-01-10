@@ -4,7 +4,19 @@ using ProduceInSeasonApi.Models;
 using System;
 using System.IO;
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("*");
+        });
+});
+
 var connectionString = Environment.GetEnvironmentVariable("PRODUCE_DB", EnvironmentVariableTarget.User);
 // Add services to the container.
 builder.Services.AddControllers();
@@ -21,6 +33,8 @@ if (builder.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthorization();
 
